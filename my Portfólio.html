@@ -1,1 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my Portfólio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --color1: #8f403a;
+            --color2: #6f302b;
+            --color3: #4f201d;
+            --color4: #30100e;
+            --color5: #100000;
+            --primary: var(--color1);
+            --primary-hover: var(--color2);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--color4);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--color2);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color1);
+        }
+        
+        body {
+            overflow-x: hidden; 
+        }
 
+        .parallax {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        @media (min-width: 1024px) { 
+            .parallax {
+                background-attachment: fixed;
+            }
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-[var(--color5)] text-white font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-[var(--color5)] bg-opacity-80 backdrop-blur-md z-50 py-4 px-6">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-semibold">
+                <span class="text-gray-300">Port</span><span class="text-white">folio</span>
+            </a>
+            <div id="nav-links" class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-300 hover:text-white transition-colors">Sobre</a>
+                <a href="#experience" class="text-gray-300 hover:text-white transition-colors">Experiência</a>
+                <a href="#webprojects" class="text-gray-300 hover:text-white transition-colors">Projetos Web</a>
+                <a href="#tools" class="text-gray-300 hover:text-white transition-colors">Ferramentas</a>
+                <a href="#blender" class="text-gray-300 hover:text-white transition-colors">Blender</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contato</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Seção Principal -->
+    <header id="home" class="min-h-screen flex items-center justify-center parallax" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('fundop.gif');">
+        <div class="text-center px-4 animate-fade-in">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-6 break-words">Emanuel <span class="text-[var(--primary)]">Ziegler Martins</span></h1>
+            <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto break-words">Um pequeno resumo das minhas experiências e projetos, uma espécie de currículo informal</p>
+            <a href="#about" class="inline-block bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white px-6 sm:px-8 py-3 rounded-full transition-all transform hover:scale-105 text-sm sm:text-base">
+                Minha jornada <i class="fas fa-arrow-down ml-2"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Sobre Mim -->
+    <section id="about" class="py-16 md:py-20 px-4 md:px-6 reveal">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center">Sobre <span class="text-[var(--primary)]">Mim</span></h2>
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-[var(--primary)]">
+                        <img src="perfil.jpeg" alt="Emanuel Ziegler Martins" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="md:w-2/3">
+                    <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                        Roi, Eu sou o Emanuel e criei esse espaço pra mostrar um pouco do que venho aprendendo e colocando em prática. Curto tudo que envolve tecnologia e estou sempre fuçando coisas novas, testando ideias e procurando soluções criativas.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                        Tenho vontade de ser monitor e estou disposto encarar qualquer desafio que apareça. Gosto de aprender fazendo e tô nessa jornada com muita curiosidade e vontade de aprender e criar.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <div class="bg-[var(--color3)] px-4 py-2 rounded-full flex items-center">
+                            <span class="w-2 h-2 bg-[var(--primary)] rounded-full mr-2"></span>
+                            <span>Busco aprendizagem</span>
+                        </div>
+                        <div class="bg-[var(--color3)] px-4 py-2 rounded-full flex items-center">
+                            <span class="w-2 h-2 bg-[var(--primary)] rounded-full mr-2"></span>
+                            <span>Localização: Erval Seco</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiencia -->
+    <section id="experience" class="py-16 md:py-20 px-4 md:px-6 bg-[var(--color4)] reveal">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center">Experiência no <span class="text-[var(--primary)]">Campus</span></h2>
+            
+            <div class="space-y-12">
+                <div class="flex flex-col md:flex-row gap-8 group">
+                    <div class="md:w-1/4">
+                        <h3 class="text-lg text-gray-400 group-hover:text-white transition-colors">Curto Resumo</h3>
+                    </div>
+                    <div class="md:w-3/4">
+                        <div class="bg-[var(--color3)] p-6 rounded-xl group-hover:bg-[var(--color2)] transition-colors duration-300">
+                            <h3 class="text-2xl font-bold mb-2">Projetos Acadêmicos <span class="text-[var(--primary)]">| IFFar Campus</span></h3>
+                            <p class="text-gray-300 mb-4">Desenvolvimento e participação em alguns projetos academicos durante meu ano letivo, aplicando conceitos aprendidos em aula.</p>
+                            <ul class="list-disc list-inside text-gray-400 pl-4 space-y-2">
+                            
+                                <li>Participação ativa nos Projetos de "<strong>A hora do código</strong>" no Campus</li>
+                                <li>Alguns desses Projetos foram: GameMaker(desenvolvimento de Jogos), Introdução.Py, entre outros 
+                                  </li>
+                                <li>Fiz alguns códigos (<strong>mais realistas</strong>) para projetos da escola, se quiser ver com mais detalhes, é só acessar os <strong>Projetos Web</strong> ou dar uma passada no meu <strong>GitHub</strong>...</li>
+                                <li>Participei da <strong>Mostra Cultural</strong></li>
+                                <li>Fui pra <strong>InterOp</strong> em Ijuí com algumas pessoas — um evento focado em <strong>tecnologia</strong> e nas utilizações dos recursos da <strong>Microsoft</strong>, que contou com a participação de integrantes da própria empresa. <strong>Gosto bastante de IA</strong>, e esse foi um dos principais assuntos discutidos por lá.</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                 <div class="flex flex-col md:flex-row gap-8 group">
+                    <div class="md:w-1/4">
+                        <h3 class="text-lg text-gray-400 group-hover:text-white transition-colors">Atual</h3>
+                    </div>
+                    <div class="md:w-3/4">
+                        <div class="bg-[var(--color3)] p-6 rounded-xl group-hover:bg-[var(--color2)] transition-colors duration-300">
+                            <h3 class="text-2xl font-bold mb-2">Estudos<span class="text-[var(--primary)]"> | Em andamento...</span></h3>
+                            <p class="text-gray-300 mb-4">Busca contínua por aprendizado e experiência dentro do campus. Me interesso por qualquer área que envolva tecnologia e criatividade.</p>
+                            <ul class="list-disc list-inside text-gray-400 pl-4 space-y-2">
+                            
+                                <li>Tentando me aprofundar em algumas linguagens como Python, HTML/CSS, JavaScript e GML.</li>
+                                <li>Desenvolvimento pequenas coisas pessoais para praticar.</li>
+                                <li>Tento me manter informado com qualquer coisa relacionado a área.</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Meus Projetos Web -->
+    <section id="webprojects" class="py-16 md:py-20 px-4 md:px-6 reveal">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center">Pequenos Projetos Web <span class="text-[var(--primary)]">(Primeiros Passos)</span></h2>
+            <p class="text-center text-gray-300 mb-10 max-w-2xl mx-auto">
+                Aqui estão alguns links para sites e pequenas aplicações que desenvolvi durante meu aprendizado. São projetos simples, mas que representam meus primeiros passos no desenvolvimento web. Neles, pude aplicar o que fui aprendendo na prática — e cada um foi uma ótima experiência.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-[var(--color4)] p-6 rounded-xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-[var(--primary)] p-3 rounded-lg mr-4">
+                            <i class="fas fa-pager text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Site Simples de Apresentação</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4 text-sm">Primeiro site pessoal que fiz ultilizando HTML & CSS, lembro de ter visto diversos tuturiais.</p>
+                    <a href="https://nuecaontrack.neocities.org/emanuelzm_website" target="_blank" class="inline-block text-sm text-[var(--primary-hover)] hover:text-[var(--primary)] font-semibold transition-colors">
+                        Ver Projeto <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+                <div class="bg-[var(--color4)] p-6 rounded-xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-[var(--primary)] p-3 rounded-lg mr-4">
+                            <i class="fas fa-flask text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Tubo de Rubens</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4 text-sm">Um pequeno site que eu tive ajuda de algumas IA pra fazer, e acabei não usando.</p>
+                    <a href="https://nuecaontrack.neocities.org/test.mostra" target="_blank" class="inline-block text-sm text-[var(--primary-hover)] hover:text-[var(--primary)] font-semibold transition-colors">
+                        Ver Projeto <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+                <div class="bg-[var(--color4)] p-6 rounded-xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-[var(--primary)] p-3 rounded-lg mr-4">
+                            <i class="fas fa-tasks text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Projeto de  Língua Portuguesa</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4 text-sm">Projeto feito para a exibição de um cartaz. Esse site foi usado como um complemento, apresentando conteúdos extras e destacando algumas características que meu grupo achou interessantes na hora.</p>
+                     <a href="https://linguaportuguesa.neocities.org/" target="_blank" class="inline-block text-sm text-[var(--primary-hover)] hover:text-[var(--primary)] font-semibold transition-colors" title="Link do projeto da Lista de Tarefas">
+                        Ver Projeto <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ferramentas -->
+    <section id="tools" class="py-16 md:py-20 px-4 md:px-6 bg-[var(--color4)] reveal">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center">Ferramentas  <span class="text-[var(--primary)]">Utilizadas;</span></h2>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-10">
+                <div class="flex flex-col items-center text-center w-24">
+                    <div class="w-16 h-16 bg-[var(--color3)] rounded-full flex items-center justify-center mb-2 text-[var(--primary)] hover:bg-[var(--primary-hover)] hover:text-white transition-colors">
+                        <i class="fab fa-java text-3xl"></i>
+                    </div>
+                    <span class="text-gray-300">Java</span>
+                </div>
+                <div class="flex flex-col items-center text-center w-24">
+                    <div class="w-16 h-16 bg-[var(--color3)] rounded-full flex items-center justify-center mb-2 text-[var(--primary)] hover:bg-[var(--primary-hover)] hover:text-white transition-colors">
+                        <i class="fab fa-python text-3xl"></i>
+                    </div>
+                    <span class="text-gray-300">Python</span>
+                </div>
+                <div class="flex flex-col items-center text-center w-24">
+                    <div class="w-16 h-16 bg-[var(--color3)] rounded-full flex items-center justify-center mb-2 text-[var(--primary)] hover:bg-[var(--primary-hover)] hover:text-white transition-colors">
+                        <i class="fab fa-html5 text-3xl"></i>
+                    </div>
+                    <span class="text-gray-300">HTML5</span>
+                </div>
+                <div class="flex flex-col items-center text-center w-24">
+                    <div class="w-16 h-16 bg-[var(--color3)] rounded-full flex items-center justify-center mb-2 text-[var(--primary)] hover:bg-[var(--primary-hover)] hover:text-white transition-colors">
+                        <i class="fab fa-css3-alt text-3xl"></i>
+                    </div>
+                    <span class="text-gray-300">CSS3</span>
+                </div>
+                <div class="flex flex-col items-center text-center w-24">
+                    <div class="w-16 h-16 bg-[var(--color3)] rounded-full flex items-center justify-center mb-2 text-[var(--primary)] hover:bg-[var(--primary-hover)] hover:text-white transition-colors">
+                        <i class="fab fa-github text-3xl"></i>
+                    </div>
+                    <span class="text-gray-300">GitHub</span>
+                </div>
+                <div class="flex flex-col items-center text-center w-24">
+                    <div class="w-16 h-16 bg-[var(--color3)] rounded-full flex items-center justify-center mb-2 text-[var(--primary)] hover:bg-[var(--primary-hover)] hover:text-white transition-colors">
+                        <i class="fas fa-cube text-3xl"></i>
+                    </div>
+                    <span class="text-gray-300">Blender</span>
+                </div>
+                <div class="flex flex-col items-center text-center w-24">
+                    <div class="w-16 h-16 bg-[var(--color3)] rounded-full flex items-center justify-center mb-2 text-[var(--primary)] hover:bg-[var(--primary-hover)] hover:text-white transition-colors">
+                        <i class="fas fa-music text-3xl"></i>
+                    </div>
+                    <span class="text-gray-300">MuseScore</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blender -->
+    <section id="blender" class="py-16 md:py-20 px-4 md:px-6 reveal">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-8 text-center text-white">
+                <i class="fas fa-cube mr-4"></i>Minhas Primeiras Impressões no <span class="text-[var(--color1)]">Blender</span>
+            </h2>
+            <p class="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
+                Estou começando a explorar todo esse universo da modelagem e tenho muita vontade de participar de projetos nessa área para aprimorar meus conhecimentos. Quero ir além dos tutoriais e fóruns tipo Reddit ou coisa do tipo, buscando experiência prática de verdade.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-[var(--color4)] rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 bg-[var(--color5)] flex items-center justify-center">
+                        <i class="fas fa-drafting-compass text-6xl text-[var(--color1)]"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-[var(--color1)]">Estudos de Modelagem</h3>
+                        <p class="text-gray-300 mb-4">Aprendendo a criar objetos e formas básicas, focando em algumas "práticas" de objetos aleatórios.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-[var(--color2)] text-white px-3 py-1 rounded-full">Iniciante com as ferramentas</span>
+                            <span class="text-xs bg-[var(--color2)] text-white px-3 py-1 rounded-full">Práticando</span>
+                            <span class="text-xs bg-[var(--color2)] text-white px-3 py-1 rounded-full">Geometria</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-[var(--color4)] rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 bg-[var(--color5)] flex items-center justify-center">
+                        <i class="fas fa-palette text-6xl text-[var(--color1)]"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-[var(--color1)]">Fundamentos 3D</h3>
+                        <p class="text-gray-300 mb-4">Explorando os fundamentos da modelagem 3D, trabalhando com vértices, arestas e polígonos para construir formas básicas.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-[var(--color2)] text-white px-3 py-1 rounded-full">Arestas</span>
+                            <span class="text-xs bg-[var(--color2)] text-white px-3 py-1 rounded-full">Faces</span>
+                            <span class="text-xs bg-[var(--color2)] text-white px-3 py-1 rounded-full">Vértices</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-[var(--color4)] rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 bg-[var(--color5)] flex items-center justify-center">
+                        <i class="fas fa-lightbulb text-6xl text-[var(--color1)]"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-[var(--color1)]">Primeiros Atalhos</h3>
+                        <p class="text-gray-300 mb-4">Aprendendo os atalhos básicos do Blender para acelerar o fluxo de trabalho e facilitar a modelagem.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-[var(--color2)] text-white px-3 py-1 rounded-full">Seleção Rápida</span>
+                            <span class="text-xs bg-[var(--color2)] text-white px-3 py-1 rounded-full">Transformações</span>
+                            <span class="text-xs bg-[var(--color2)] text-white px-3 py-1 rounded-full">Modos de Edição</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contact" class="py-16 md:py-20 px-4 md:px-6 bg-[var(--color5)] reveal">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center">Entre em <span class="text-[var(--primary)]">Contato</span></h2>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2 bg-[var(--color4)] p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold mb-6">Envie uma mensagem</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-300 mb-2">Nome</label>
+                            <input type="text" id="name" class="w-full bg-[var(--color3)] border border-[var(--color2)] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-300 mb-2">Email</label>
+                            <input type="email" id="email" class="w-full bg-[var(--color3)] border border-[var(--color2)] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-300 mb-2">Assunto</label>
+                            <input type="text" id="subject" class="w-full bg-[var(--color3)] border border-[var(--color2)] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-300 mb-2">Mensagem</label>
+                            <textarea id="message" rows="5" class="w-full bg-[var(--color3)] border border-[var(--color2)] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"></textarea>
+                        </div>
+                        <button type="submit" class="bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white px-8 py-3 rounded-lg transition-colors w-full md:w-auto">
+                            Enviar Mensagem <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <h3 class="text-2xl font-bold mb-6">Informações de Contato</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-[var(--primary)] p-2 rounded-lg mr-4">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-300">Email</h4>
+                                <a href="mailto:Emanuel.54079@aluno.iffar.edu.br" class="text-[var(--primary)] hover:underline">Emanuel.54079@aluno.iffar.edu.br</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-[var(--primary)] p-2 rounded-lg mr-4">
+                                <i class="fas fa-phone-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-300">Telefone</h4>
+                                <a href="tel:+5555999070868" class="text-[var(--primary)] hover:underline">+55 (55) 99907-0868</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-[var(--primary)] p-2 rounded-lg mr-4">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-300">Localização</h4>
+                                <p class="text-gray-400">Erval Seco, RS, Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <h3 class="text-2xl font-bold mb-6">Redes Sociais</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://steamcommunity.com/id/emanueca/" target="_blank" class="w-12 h-12 bg-[var(--color3)] rounded-full flex items-center justify-center text-white hover:bg-[#1b2838] transition-colors" title="Steam">
+                                <i class="fab fa-steam text-xl"></i>
+                            </a>
+                            <a href="https://www.instagram.com/emanuel_zzie" target="_blank" class="w-12 h-12 bg-[var(--color3)] rounded-full flex items-center justify-center text-white hover:bg-pink-600 transition-colors" title="Instagram">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="https://github.com/emanuecaIFFar" target="_blank" class="w-12 h-12 bg-[var(--color3)] rounded-full flex items-center justify-center text-white hover:bg-[var(--color2)] transition-colors" title="GitHub">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 bg-[var(--color4)] p-6 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-4 text-white">Créditos & <span class="text-[var(--primary)]">Inspirações</span></h3>
+                        <p class="text-sm text-gray-300 mb-2">
+                            <i class="fas fa-brain mr-2 text-[var(--primary)]"></i> Este portfólio foi desenvolvido com o apoio de ferramentas de Inteligência Artificial, como o <strong>ChatGPT</strong>, utilizado para geração e aprimoramento de textos, e o <strong>DeepSite/Google Studio (Bard)</strong>, explorado para pesquisas e referências de design. Tenho um profundo interesse pela área de Inteligência Artificial e por seu potencial em ampliar a criatividade e a produtividade.
+                        </p>
+                        <p class="text-sm text-gray-300 mb-2">
+                            <i class="fas fa-cloud-upload-alt mr-2 text-[var(--primary)]"></i> Hospedado com PROFUNDO carinho no <a href="https://neocities.org/" target="_blank" class="text-[var(--primary-hover)] hover:text-[var(--primary)] font-semibold">NeoCities</a>.
+                        </p>
+                        <p class="text-sm text-gray-300">
+                            <i class="fas fa-code mr-2 text-[var(--primary)]"></i> E claro, muito aprendizado com tutoriais, documentações e alguns fóruns tipo reddit e w3schools.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[var(--color4)] py-12 px-4 md:px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-2">Emanuel <span class="text-[var(--primary)]">Ziegler Martins</span></h3>
+                    <p class="text-gray-400">"Einstein no morro morre e não desponta..."</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#about" class="text-gray-400 hover:text-white transition-colors">Sobre</a>
+                    <a href="#experience" class="text-gray-400 hover:text-white transition-colors">Experiência</a>
+                    <a href="#webprojects" class="text-gray-400 hover:text-white transition-colors">Projetos Web</a>
+                    <a href="#tools" class="text-gray-400 hover:text-white transition-colors">Ferramentas</a>
+                    <a href="#blender" class="text-gray-400 hover:text-white transition-colors">Blender</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contato</a>
+                </div>
+            </div>
+            <div class="border-t border-[var(--color3)] mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm text-center md:text-left mb-4 md:mb-0">
+                    © 2025 Emanuel Ziegler Martins. Todos os direitos reservados.
+                </p>
+                <p class="text-gray-400 text-sm">
+                    Desenvolvido com <i class="fas fa-heart text-red-500"></i> por <a href="#" class="text-[var(--primary)] hover:underline">Emanuel Ziegler Martins</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top" class="fixed bottom-8 right-8 bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white w-12 h-12 rounded-full flex items-center justify-center transition-opacity opacity-0 invisible z-50">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Animação de revelação ao rolar
+        function reveal() {
+            const reveals = document.querySelectorAll(".reveal");
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); 
+
+        const backToTopButton = document.getElementById("back-to-top");
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove("opacity-0", "invisible");
+                backToTopButton.classList.add("opacity-100", "visible");
+            } else {
+                backToTopButton.classList.remove("opacity-100", "visible");
+                backToTopButton.classList.add("opacity-0", "invisible");
+            }
+        });
+        backToTopButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+        
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const navLinks = document.getElementById('nav-links');
+
+        if (mobileMenuButton && navLinks) {
+            mobileMenuButton.addEventListener('click', () => {
+                const isOpen = navLinks.classList.contains('menu-open');
+
+                if (isOpen) {
+                    navLinks.classList.remove('menu-open', 'flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-[var(--color5)]', 'bg-opacity-95', 'backdrop-blur-md', 'py-4', 'px-6', 'space-y-4', 'shadow-lg');
+                    navLinks.classList.add('hidden', 'md:flex', 'space-x-8'); 
+                    navLinks.querySelectorAll('a').forEach(link => {
+                        link.classList.remove('block', 'text-center', 'py-2');
+                    });
+                    mobileMenuButton.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+                } else {
+                    navLinks.classList.add('menu-open', 'flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-[var(--color5)]', 'bg-opacity-95', 'backdrop-blur-md', 'py-4', 'px-6', 'space-y-4', 'shadow-lg');
+                    navLinks.classList.remove('hidden', 'md:flex', 'space-x-8');
+                    navLinks.querySelectorAll('a').forEach(link => {
+                        link.classList.add('block', 'text-center', 'py-2');
+                    });
+                    mobileMenuButton.innerHTML = '<i class="fas fa-times text-xl"></i>';
+                }
+            });
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navLinks.classList.contains('menu-open')) {
+                        mobileMenuButton.click();
+                    }
+                });
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 768 && navLinks.classList.contains('menu-open')) { 
+                    mobileMenuButton.click(); 
+                }
+            });
+        }
+    </script>
+</body>
+</html>
