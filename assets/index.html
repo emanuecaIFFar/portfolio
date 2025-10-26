@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>my Portfólio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-[var(--color5)] text-white font-sans antialiased">
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-[var(--color5)] bg-opacity-80 backdrop-blur-md z-50 py-4 px-6">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <a href="#" class="text-2xl font-semibold">
+        <span class="text-gray-300">Port</span><span class="text-white">folio</span>
+      </a>
+      <div id="nav-links" class="hidden md:flex space-x-8">
+        <a href="#about" class="text-gray-300 hover:text-white transition-colors">Sobre</a>
+        <a href="#experience" class="text-gray-300 hover:text-white transition-colors">Experiência</a>
+        <a href="#webprojects" class="text-gray-300 hover:text-white transition-colors">Projetos Web</a>
+        <a href="#tools" class="text-gray-300 hover:text-white transition-colors">Ferramentas</a>
+        <a href="#blender" class="text-gray-300 hover:text-white transition-colors">Blender</a>
+        <a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contato</a>
+      </div>
+      <button id="mobile-menu-button" class="md:hidden text-white">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Conteúdo principal -->
+  <header id="home" class="min-h-screen flex items-center justify-center parallax" 
+    style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('fundop.gif');">
+    <div class="text-center px-4 animate-fade-in">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-6 break-words">
+        Emanuel <span class="text-[var(--primary)]">Ziegler Martins</span>
+      </h1>
+      <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto break-words">
+        Um pequeno resumo das minhas experiências e projetos, uma espécie de currículo informal
+      </p>
+      <a href="#about" 
+         class="inline-block bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white px-6 sm:px-8 py-3 rounded-full transition-all transform hover:scale-105 text-sm sm:text-base">
+        Minha jornada <i class="fas fa-arrow-down ml-2"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- Demais seções (Sobre, Experiência, Projetos, Ferramentas, etc.) -->
+  <!-- Copie aqui todas as outras seções que já estão prontas -->
+  
+  <!-- Back to Top Button -->
+  <a href="#" id="back-to-top" 
+     class="fixed bottom-8 right-8 bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white w-12 h-12 rounded-full flex items-center justify-center transition-opacity opacity-0 invisible z-50">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
